@@ -1,0 +1,66 @@
+Survival Linux Quick Reference
+
+Getting In
+
+ssh				Secure Shell client|server										ssh user@host
+PuTTY			Secure Shell client (Windows)		
+sudo 			Super User Do 													sudo apt-get update
+
+Getting Around
+
+pwd				Displays the Present Working Directory							pwd
+ls 				List files and directories										ls -lt
+cd				Change Directory												cd /var/log/
+
+Peeking At Files
+
+cat				Concatinate file(s) and output results							cat /var/log/syslog
+less			Paginates file content to the screen							less /var/log/syslog
+tail			View the last lines of a file 									tail -f /var/log/syslog
+
+Finding Files
+
+find 			Search for files in a directory hierarchy						find . -mtime 0
+locate			File Search (driven by a database)								locate python
+which 			Locate a executable's path										which python
+
+Search Me
+
+grep			Print lines matching a pattern									grep '[!]' *
+
+What's Going On?
+
+ps 				Report a snapshot of the current processes						ps -ef
+top 			Display Linux processes 										top
+/proc 			A Virutal filesystem that presents real-time system statistics	cat /proc/cpuinfo
+ifconfig		Network Interface Configure										ifconfig
+ip  			Show/manipulate routing, devices, policy routing and tunnels	ip address show 
+ping 			Send ICMP ECHO_REQUEST to network hosts							ping 8.8.8.8
+traceroute		Print the route packets trace to network hosts  				traceroute 8.8.8.8
+
+Filesystems
+
+df				Report file system disk space usage								df -h
+du 				Estimate file space use 										du -sh * 2> /dev/null
+
+Transfering Files
+
+scp				Secure copy (remote file copy program)							scp foo.txt user@host:path
+pscp			PuTTY secure copy (remote file copy program for Windows)		pscp user@host:path/file C:\Temp\.
+smbclient       FTP-like client to access SMB/CIFS resources on servers			smbclient -L -U 'evg\username'
+
+Starting and Stopping
+
+service 		Run a System V init script										sudo service apache2 restart
+systemctl 		Control the systemd system and service manager 					sudo systemctl restart apache2
+kill 			Send a signal to a process 										kill -9 31459
+reboot 			Reboot the machine												sudo reboot
+shutdown 		Halt/power-off the machine 										sudo shutdown -P 
+
+Where to Go for Help
+
+man 			Manual pager utility 											man apropos
+apropos 		Search the manual page names and descriptions 					apropos
+Google 			Web Search Engine 												https://google.com
+Stack Exchange  A network of question-and-answer websites						https://stackexchange.com
+TLDP 			The Linux Documentation Project  								https://tldp.org
