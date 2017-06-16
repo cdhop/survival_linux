@@ -1,4 +1,21 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/xenial64"
-  config.vbguest.auto_update = false
+  config.vm.define :mercury do |mercury_config|
+    #mercury_config.vm.box = "ubuntu/xenial64"
+    mercury_config.vm.box = "bento/ubuntu-16.04"
+    mercury_config.vbguest.auto_update = false
+    mercury_config.vm.hostname = 'mercury' 
+    mercury_config.vm.network "private_network", type: 'dhcp'
+    mercury_config.vm.define :mercury do |mercury|
+    end
+  end
+
+  config.vm.define :venus do |venus_config|
+    #venus_config.vm.box = "ubuntu/xenial64"
+    venus_config.vm.box = "bento/ubuntu-16.04"
+    venus_config.vbguest.auto_update = false
+    venus_config.vm.hostname = 'venus' 
+    venus_config.vm.network "private_network", type: 'dhcp'
+    venus_config.vm.define :venus do |venus|
+    end
+  end
 end
