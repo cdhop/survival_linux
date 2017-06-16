@@ -47,7 +47,7 @@ Transfering Files
 
 scp			Secure copy (remote file copy program)				scp foo.txt user@host:path
 pscp			PuTTY secure copy (remote file copy program for Windows)	pscp user@host:path/file C:\Temp\.
-smbclient       	FTP-like client to access SMB/CIFS resources on servers		smbclient -L -U 'evg\username'
+smbclient       	FTP-like client to access SMB/CIFS resources on servers		smbclient -L hostname -U 'evg\username'
 
 Starting and Stopping
 
